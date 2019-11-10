@@ -46,9 +46,9 @@ perform:
   ### perform HTTP format: json or form-urlencoded ###
   format: json
   ### parameter name in HTTP query string for challenge string
-  param\_challenge: ~
+  param_challenge: ~
   ### parameter name in HTTP body for validation string
-  param\_validation: ~
+  param_validation: ~
   ### perform HTTP custom headers
   headers: {}
   ### perform HTTP connection timeout
@@ -65,7 +65,7 @@ cleanup:
   ### cleanup HTTP format: json or form-urlencoded ###
   format: json
   ### parameter name in HTTP query string for challenge string
-  param\_challenge: ~
+  param_challenge: ~
   ### cleanup HTTP custom headers
   headers: {}
   ### cleanup HTTP connection timeout
