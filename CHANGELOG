@@ -1,0 +1,59 @@
+certbot-httpreq (0.0.10) unstable; urgency=medium
+
+  * Added documentation.
+
+ -- Adrien DELLE CAVE (Decryptus) <adc@doowan.net>  Sun, 10 Nov 2019 20:13:43 +0100
+
+certbot-httpreq (0.0.9) unstable; urgency=medium
+
+  * Reviewed parameters name.
+
+ -- Adrien DELLE CAVE (Decryptus) <adc@doowan.net>  Sun, 10 Nov 2019 19:59:37 +0100
+
+certbot-httpreq (0.0.8) unstable; urgency=medium
+
+  * Fixed certbot-httpreq.yml.
+
+ -- Adrien DELLE CAVE (Decryptus) <adc@doowan.net>  Sun, 27 Oct 2019 12:36:03 +0100
+
+certbot-httpreq (0.0.7) unstable; urgency=medium
+
+  * Fixed installer URI.
+
+ -- Adrien DELLE CAVE (Decryptus) <adc@doowan.net>  Thu, 24 Oct 2019 13:42:40 +0200
+
+certbot-httpreq (0.0.6) unstable; urgency=medium
+
+  * Fixed authenticator.
+
+ -- Adrien DELLE CAVE (Decryptus) <adc@doowan.net>  Thu, 24 Oct 2019 12:10:13 +0200
+
+certbot-httpreq (0.0.5) unstable; urgency=medium
+
+  * Fixed authenticator and installer.
+
+ -- Adrien DELLE CAVE (Decryptus) <adc@doowan.net>  Thu, 24 Oct 2019 11:37:21 +0200
+
+certbot-httpreq (0.0.4) unstable; urgency=medium
+
+  * Reviewed configuration options.
+
+ -- Adrien DELLE CAVE (Decryptus) <adc@doowan.net>  Wed, 23 Oct 2019 18:35:59 +0200
+
+certbot-httpreq (0.0.3) unstable; urgency=medium
+
+  * Fixed authenticator URI.
+
+ -- Adrien DELLE CAVE (Decryptus) <adc@doowan.net>  Fri, 18 Oct 2019 10:14:25 +0200
+
+certbot-httpreq (0.0.2) unstable; urgency=medium
+
+  * Fixed pip release.
+
+ -- Adrien DELLE CAVE (Decryptus) <adc@doowan.net>  Thu, 17 Oct 2019 22:17:40 +0200
+
+certbot-httpreq (0.0.1) unstable; urgency=medium
+
+  * Initial release.
+
+ -- Adrien DELLE CAVE (Decryptus) <adc@doowan.net>  Thu, 17 Oct 2019 18:47:26 +0200
