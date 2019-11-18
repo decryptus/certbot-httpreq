@@ -45,15 +45,17 @@ perform:
   method: PUT
   ### perform HTTP format: json or form-urlencoded ###
   format: json
-  ### parameter name in HTTP query string for challenge string
+  ### parameter name in HTTP query string for challenge string ###
+  ### default: HTTP path e.g.: http://localhost/HGr8U1IeTW4kY_Z6UIyaakzOkyQgPr_7ArlLgtZE8SX ###
   param_challenge: ~
   ### parameter name in HTTP body for validation string
+  ### default: HTTP json payload e.g.: "gfj9Xq...Rg85nM" ###
   param_validation: ~
-  ### perform HTTP custom headers
+  ### perform HTTP custom headers ###
   headers: {}
-  ### perform HTTP connection timeout
+  ### perform HTTP connection timeout ###
   timeout: ~
-  ### perform HTTP SSL verify
+  ### perform HTTP SSL verify ###
   verify: ~
 cleanup:
   ### cleanup HTTP uri ###
@@ -64,13 +66,14 @@ cleanup:
   method: DELETE
   ### cleanup HTTP format: json or form-urlencoded ###
   format: json
-  ### parameter name in HTTP query string for challenge string
+  ### parameter name in HTTP query string for challenge string ###
+  ### default: HTTP path e.g.: http://localhost/HGr8U1IeTW4kY_Z6UIyaakzOkyQgPr_7ArlLgtZE8SX ###
   param_challenge: ~
-  ### cleanup HTTP custom headers
+  ### cleanup HTTP custom headers ###
   headers: {}
-  ### cleanup HTTP connection timeout
+  ### cleanup HTTP connection timeout ###
   timeout: ~
-  ### cleanup HTTP SSL verify
+  ### cleanup HTTP SSL verify ###
   verify: ~
 
 # installer
@@ -82,11 +85,12 @@ deploy:
   ### deploy HTTP method: POST or PUT or PATCH ###
   method: POST
   ### deploy HTTP format: json or form-urlencoded ###
+  ### e.g.: HTTP json payload: {"domain":"...","cert":"...","key":"...","chain":"..."} ###
   format: json
-  ### deploy HTTP custom headers
+  ### deploy HTTP custom headers ###
   headers: {}
-  ### deploy HTTP connection timeout
+  ### deploy HTTP connection timeout ###
   timeout: ~
-  ### deploy HTTP SSL verify
+  ### deploy HTTP SSL verify ###
   verify: ~
 ```
