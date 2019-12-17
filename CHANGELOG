@@ -1,3 +1,9 @@
+certbot-httpreq (0.0.15) unstable; urgency=medium
+
+  * Added more_info about installer.
+
+ -- Adrien DELLE CAVE (Decryptus) <adc@doowan.net>  Tue, 17 Dec 2019 15:30:54 +0100
+
 certbot-httpreq (0.0.14) unstable; urgency=medium
 
   * Fixed documentation.

@@ -36,7 +36,7 @@ class Installer(common.Plugin):
         self._config = {}
         self._uri    = None
 
-    def _build_uri(self):   # pylint: disable=missing-docstring
+    def _build_uri(self):  # pylint: disable=missing-docstring
         return urisup.uri_help_unsplit(self._uri)
 
     @staticmethod
@@ -64,10 +64,10 @@ class Installer(common.Plugin):
         self._uri[2] = confdeploy['path']
 
     def more_info(self):  # pylint: disable=missing-docstring,no-self-use
-        return ""
+        return "Installer send certificates to a custom HTTP endpoint"
 
     def get_all_names(self):  # pylint: disable=missing-docstring,no-self-use
-        pass  # pragma: no cover
+        return []  # pragma: no cover
 
     def deploy_cert(self, domain, cert_path, key_path, chain_path, fullchain_path):  # pylint: disable=unused-argument
         """
