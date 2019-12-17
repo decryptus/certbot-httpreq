@@ -54,7 +54,7 @@ class Authenticator(common.Plugin):
             conf[name] = os.getenv("CBT_HTTPREQ_%s_%s" % (xtype.upper(), name.upper())) or default
 
     def prepare(self):  # pylint: disable=missing-docstring,no-self-use
-        self._config = helpers.load_conf_yaml_file(self.conf('certbot-httpreq-config'))
+        self._config = helpers.load_conf_yaml_file(self.conf('config'))
         if not self._config.get('perform'):
             self._config['perform'] = {}
 
