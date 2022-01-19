@@ -1,3 +1,9 @@
+certbot-httpreq (0.0.17) unstable; urgency=medium
+
+  * Reviewed requirements.
+
+ -- Adrien DELLE CAVE (Decryptus) <adc@doowan.net>  Wed, 19 Jan 2022 13:28:24 +0100
+
 certbot-httpreq (0.0.16) unstable; urgency=medium
 
   * Reviewed requirements.

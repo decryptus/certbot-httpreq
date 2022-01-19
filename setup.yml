@@ -3,9 +3,9 @@ name: certbot-httpreq
 description: certbot-httpreq plugin for certbot client
 author: Adrien Delle Cave
 author_email: pypi@doowan.net
-copyright: '2019 Adrien Delle Cave'
-release: '0.0.16'
-version: '0.0.16'
+copyright: '2019-2022 Adrien Delle Cave'
+release: '0.0.17'
+version: '0.0.17'
 license: License GPL-3
 url: https://github.com/decryptus/certbot-httpreq
 python_requires:

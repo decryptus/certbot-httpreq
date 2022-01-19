@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2019 Adrien Delle Cave
+# Copyright 2019-2022 Adrien Delle Cave
 # SPDX-License-Identifier: GPL-3.0-or-later
 """HTTP Requests Let's Encrypt installer plugin."""
 
@@ -53,7 +53,7 @@ class Installer(common.Plugin):
         confdeploy = self._config['deploy']
 
         self._set_option(confdeploy, 'deploy', 'uri', 'http://localhost')
-        self._set_option(confdeploy, 'deploy', 'path') or '/'
+        self._set_option(confdeploy, 'deploy', 'path', '/')
         self._set_option(confdeploy, 'deploy', 'method', 'PUT')
         self._set_option(confdeploy, 'deploy', 'format', 'json')
         self._set_option(confdeploy, 'deploy', 'param_challenge')

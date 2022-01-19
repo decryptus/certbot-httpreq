@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2019 Adrien Delle Cave
+# Copyright 2019-2022 Adrien Delle Cave
 # SPDX-License-Identifier: GPL-3.0-or-later
 """HTTP Requests Let's Encrypt authenticator plugin."""
 import os
