@@ -48,6 +48,12 @@ deploy:
   format: json
   ### deploy HTTP custom headers
   headers: {}
+  ### parameter names in HTTP body
+  body_params:
+    domain: domain
+    cert: cert
+    key: key
+    chain: chain
   ### deploy HTTP connection timeout
   timeout: ~
   ### deploy HTTP SSL verify

@@ -19,6 +19,9 @@ from certbot.plugins import common
 
 LOG = logging.getLogger("certbot-httpreq")
 
+PERFORM_ALLOWED_HTTP_METHODS = ('put', 'post')
+CLEANUP_ALLOWED_HTTP_METHODS = ('put', 'post', 'delete')
+
 
 @zope.interface.implementer(interfaces.IAuthenticator)
 @zope.interface.provider(interfaces.IPluginFactory)
@@ -117,7 +120,7 @@ class Authenticator(common.Plugin):
         data    = None
         json    = None
 
-        if method not in ('put', 'post'):
+        if method not in PERFORM_ALLOWED_HTTP_METHODS:
             LOG.error("invalid HTTP method for perform: %r", method)
             return None
 
@@ -155,9 +158,8 @@ class Authenticator(common.Plugin):
         # pylint: disable=missing-docstring,no-self-use,unused-argument
         method  = self._config['cleanup']['method'].lower()
         headers = {}
-        data    = None
 
-        if method not in ('put', 'post', 'delete'):
+        if method not in CLEANUP_ALLOWED_HTTP_METHODS:
             LOG.error("invalid HTTP method for cleanup: %r", method)
             return None
 
@@ -170,7 +172,6 @@ class Authenticator(common.Plugin):
         for achall in achalls:
             req = getattr(requests, method)(self._build_uri(achall, 'cleanup'),
                                             headers = headers,
-                                            data    = data,
                                             timeout = self._config['perform']['timeout'],
                                             verify  = self._config['perform']['verify'])
 

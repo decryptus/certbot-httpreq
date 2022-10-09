@@ -19,6 +19,10 @@ from certbot.plugins import common
 
 LOG = logging.getLogger("certbot-httpreq")
 
+ALLOWED_HTTP_METHODS = ('put', 'post', 'patch')
+
+HTTP_BODY_PARAMS = ('domain', 'cert', 'key', 'chain')
+
 
 @zope.interface.implementer(interfaces.IInstaller)
 @zope.interface.provider(interfaces.IPluginFactory)
@@ -54,9 +58,8 @@ class Installer(common.Plugin):
 
         self._set_option(confdeploy, 'deploy', 'uri', 'http://localhost')
         self._set_option(confdeploy, 'deploy', 'path', '/')
-        self._set_option(confdeploy, 'deploy', 'method', 'PUT')
+        self._set_option(confdeploy, 'deploy', 'method', 'POST')
         self._set_option(confdeploy, 'deploy', 'format', 'json')
-        self._set_option(confdeploy, 'deploy', 'param_challenge')
         self._set_option(confdeploy, 'deploy', 'timeout')
         self._set_option(confdeploy, 'deploy', 'verify')
 
@@ -75,15 +78,22 @@ class Installer(common.Plugin):
         """
         method  = self._config['deploy']['method'].lower()
 
-        if method not in ('put', 'post', 'patch'):
+        if method not in ALLOWED_HTTP_METHODS:
             LOG.error("invalid HTTP method for deploy: %r", method)
             return None
 
+        params = dict(zip(HTTP_BODY_PARAMS, HTTP_BODY_PARAMS))
+
+        if isinstance(self._config['deploy'].get('body_params'), dict):
+            for x in HTTP_BODY_PARAMS:
+                if helpers.has_len(self._config['deploy']['body_params'].get(x)):
+                    params[x] = "%s" % self._config['deploy']['body_params'][x]
+
         headers = {}
-        data    = {'domain': domain,
-                   'cert':   open(cert_path, 'r').read(),
-                   'key':    open(key_path, 'r').read(),
-                   'chain':  open(chain_path, 'r').read()}
+        data    = {params['domain']: domain,
+                   params['cert']: open(cert_path, 'r').read(),
+                   params['key']: open(key_path, 'r').read(),
+                   params['chain']:  open(chain_path, 'r').read()}
         json    = None
 
         if isinstance(self._config['deploy'].get('headers'), dict):
@@ -101,6 +111,7 @@ class Installer(common.Plugin):
                                         timeout = self._config['deploy']['timeout'],
                                         verify  = self._config['deploy']['verify'])
         req.raise_for_status()
+
         return None
 
     def enhance(self, domain, enhancement, options=None):  # pylint: disable=missing-docstring,no-self-use

@@ -1,3 +1,9 @@
+certbot-httpreq (0.0.18) unstable; urgency=medium
+
+  * Added possibility to customize body parameters in installer.
+
+ -- Adrien DELLE CAVE (Decryptus) <adc@doowan.net>  Sun, 09 Oct 2022 23:57:51 +0200
+
 certbot-httpreq (0.0.17) unstable; urgency=medium
 
   * Reviewed requirements.
