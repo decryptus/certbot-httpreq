@@ -87,6 +87,12 @@ deploy:
   ### deploy HTTP format: json or form-urlencoded ###
   ### e.g.: HTTP json payload: {"domain":"...","cert":"...","key":"...","chain":"..."} ###
   format: json
+  ### parameter names in HTTP body
+  body_params:
+    domain: domain
+    cert: cert
+    key: key
+    chain: chain
   ### deploy HTTP custom headers ###
   headers: {}
   ### deploy HTTP connection timeout ###
